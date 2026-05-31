@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayumi — Portfolio</title>
+  <meta name="description" content="Ayumiのポートフォリオサイトです。自己紹介、スキル、制作実績をご覧いただけます。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Ayumi</a>
+      <nav aria-label="メインナビゲーション">
+        <ul class="site-nav">
+          <li><a href="index.html" class="active">Portfolio</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <img
+            src="assets/images/avatar.jpg"
+            alt="Ayumiのプロフィール写真"
+            class="hero-avatar"
+            onerror="this.style.background='var(--color-accent-light)';this.removeAttribute('src')"
+          />
+          <div>
+            <p class="hero-eyebrow">Hello, I'm</p>
+            <h1 class="hero-name">Ayumi</h1>
+            <p class="hero-tagline">
+              Webエンジニア・デザイナー。<br />
+              シンプルで、人に伝わるものを丁寧に作ります。
+            </p>
+            <div class="hero-links">
+              <a href="#works" class="btn btn-primary">実績を見る</a>
+              <a href="blog/index.html" class="btn btn-outline">ブログを読む</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <span class="section-label">About</span>
+        <h2 class="section-title">自己紹介</h2>
+        <hr class="section-rule" />
+        <p class="fade-up">
+          はじめまして、Ayumiです。フロントエンドを中心に、ユーザーが心地よく使えるWebサービスの設計・実装を行っています。
+          自然素材や余白を大切にしたデザインが好きで、コードの読みやすさにもこだわります。<br /><br />
+          AWSを活用した静的サイト配信や、React + TypeScriptでのプロダクト開発が得意です。
+          技術ブログでは日々の学びや実装のヒントを発信しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">スキルセット</h2>
+        <hr class="section-rule" />
+        <div class="skills-grid">
+
+          <div class="skill-card fade-up">
+            <div class="skill-card-icon">⚛️</div>
+            <h3>Frontend</h3>
+            <ul class="skill-list" aria-label="Frontend スキル">
+              <li class="skill-tag">HTML / CSS</li>
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">React</li>
+              <li class="skill-tag">TypeScript</li>
+              <li class="skill-tag">Next.js</li>
+            </ul>
+          </div>
+
+          <div class="skill-card fade-up">
+            <div class="skill-card-icon">🖥️</div>
+            <h3>Backend / Infra</h3>
+            <ul class="skill-list" aria-label="Backend / Infra スキル">
+              <li class="skill-tag">Node.js</li>
+              <li class="skill-tag">Python</li>
+              <li class="skill-tag">AWS</li>
+              <li class="skill-tag">Docker</li>
+              <li class="skill-tag">PostgreSQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-card fade-up">
+            <div class="skill-card-icon">🎨</div>
+            <h3>Design / Other</h3>
+            <ul class="skill-list" aria-label="Design / Other スキル">
+              <li class="skill-tag">Figma</li>
+              <li class="skill-tag">Git / GitHub</li>
+              <li class="skill-tag">Accessibility</li>
+              <li class="skill-tag">Technical Writing</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works">
+      <div class="container">
+        <span class="section-label">Works</span>
+        <h2 class="section-title">制作実績</h2>
+        <hr class="section-rule" />
+        <div class="works-grid">
+
+          <article class="work-card fade-up">
+            <div class="work-card-thumbnail" style="background:#e8f0eb;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🛍️</div>
+            <div class="work-card-body">
+              <h3 class="work-card-title">ECサイトリニューアル</h3>
+              <p class="work-card-desc">React + Next.jsで既存サイトをフルリニューアル。Core Web Vitalsスコアを大幅改善し、CVR向上に貢献。</p>
+              <div class="work-card-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Live →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card fade-up">
+            <div class="work-card-thumbnail" style="background:#eef0f5;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">📊</div>
+            <div class="work-card-body">
+              <h3 class="work-card-title">社内分析ダッシュボード</h3>
+              <p class="work-card-desc">BIツールとAPIを連携した社内向けデータ可視化基盤。ノーコード操作でグラフを生成できる仕組みを実装。</p>
+              <div class="work-card-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card fade-up">
+            <div class="work-card-thumbnail" style="background:#f5f0e8;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🌿</div>
+            <div class="work-card-body">
+              <h3 class="work-card-title">このポートフォリオ</h3>
+              <p class="work-card-desc">Vanilla HTML/CSS/JSで構築し、AWS S3 + CloudFrontで配信。シンプルさと読みやすさを重視したデザイン。</p>
+              <div class="work-card-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">お問い合わせ</h2>
+        <hr class="section-rule" />
+        <p>お仕事のご依頼やご相談はお気軽にどうぞ。<br />まずはメールかSNSでご連絡ください。</p>
+        <a href="mailto:your@email.com" class="btn btn-white">メールを送る</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ayumi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

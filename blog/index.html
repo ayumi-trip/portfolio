@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ayumi</title>
+  <meta name="description" content="Ayumiのブログです。Web開発やデザインについての記事を掲載しています。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="site-logo">Ayumi</a>
+      <nav aria-label="メインナビゲーション">
+        <ul class="site-nav">
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <span class="section-label">Articles</span>
+        <h1 class="section-title">ブログ</h1>
+        <hr class="section-rule" />
+
+        <div class="article-list" role="list">
+
+          <a href="posts/sample-post-1.html" class="article-card fade-up" role="listitem">
+            <div class="article-card-thumbnail" style="background:#e8f0eb;display:flex;align-items:center;justify-content:center;font-size:1.8rem;">☁️</div>
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time datetime="2026-05-20">2026-05-20</time>
+                <span class="article-tag">AWS</span>
+                <span class="article-tag">S3</span>
+              </div>
+              <h2 class="article-card-title">S3 + CloudFront で静的サイトをホスティングする方法</h2>
+              <p class="article-card-excerpt">
+                AWS S3 バケットと CloudFront ディストリビューションを組み合わせて、静的サイトを高速・低コストに公開する手順をまとめました。
+              </p>
+            </div>
+          </a>
+
+          <a href="posts/sample-post-2.html" class="article-card fade-up" role="listitem">
+            <div class="article-card-thumbnail" style="background:#eef0f5;display:flex;align-items:center;justify-content:center;font-size:1.8rem;">🎨</div>
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time datetime="2026-05-10">2026-05-10</time>
+                <span class="article-tag">CSS</span>
+                <span class="article-tag">Design</span>
+              </div>
+              <h2 class="article-card-title">CSS カスタムプロパティで作るテーマ切り替え</h2>
+              <p class="article-card-excerpt">
+                CSS 変数（カスタムプロパティ）を活用して、ライト・ダークモードをシンプルに実装する方法を解説します。
+              </p>
+            </div>
+          </a>
+
+          <a href="posts/sample-post-3.html" class="article-card fade-up" role="listitem">
+            <div class="article-card-thumbnail" style="background:#f5f0e8;display:flex;align-items:center;justify-content:center;font-size:1.8rem;">♿</div>
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time datetime="2026-04-28">2026-04-28</time>
+                <span class="article-tag">アクセシビリティ</span>
+              </div>
+              <h2 class="article-card-title">Webアクセシビリティの基本 — スクリーンリーダー対応の第一歩</h2>
+              <p class="article-card-excerpt">
+                すべてのユーザーに届くサイトを作るための、セマンティックなHTMLとARIA属性の使い方を初心者向けに紹介します。
+              </p>
+            </div>
+          </a>
+
+        </div>
+
+        <nav class="pagination" aria-label="ページネーション">
+          <span class="current">1</span>
+          <a href="?page=2">2</a>
+          <a href="?page=3">3</a>
+          <a href="?page=2" aria-label="次のページ">›</a>
+        </nav>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ayumi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

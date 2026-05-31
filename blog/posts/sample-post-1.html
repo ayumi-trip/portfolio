@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S3 + CloudFront で静的サイトをホスティングする方法 — Ayumi Blog</title>
+  <meta name="description" content="AWS S3 バケットと CloudFront ディストリビューションを組み合わせて静的サイトを公開する手順。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="site-logo">Ayumi</a>
+      <nav aria-label="メインナビゲーション">
+        <ul class="site-nav">
+          <li><a href="../../index.html">Portfolio</a></li>
+          <li><a href="../index.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 記事ヘッダー -->
+    <header class="article-header">
+      <div class="container">
+        <div class="article-header-meta">
+          <time datetime="2026-05-20">2026-05-20</time>
+          <span class="article-tag">AWS</span>
+          <span class="article-tag">S3</span>
+          <span class="article-tag">CloudFront</span>
+        </div>
+        <h1 class="article-title">S3 + CloudFront で静的サイトをホスティングする方法</h1>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- アイキャッチ画像: assets/images/ 以下の実際の画像パスに差し替えてください -->
+      <img
+        src="../../assets/images/post-placeholder.jpg"
+        alt="AWSのアーキテクチャ図"
+        class="article-hero-image"
+        onerror="this.style.background='var(--color-accent-light)';this.removeAttribute('src')"
+      />
+
+      <!-- 記事本文 -->
+      <article class="article-body">
+
+        <p>
+          AWS S3 と CloudFront を組み合わせると、スケーラブルで低コストな静的サイトのホスティング環境を簡単に構築できます。
+          この記事では、バケット作成からカスタムドメインの設定まで、一連の手順を解説します。
+        </p>
+
+        <h2>1. S3 バケットの作成</h2>
+
+        <p>
+          まず S3 バケットを作成します。バケット名はドメイン名と一致させると管理がしやすくなります。
+          パブリックアクセスは後述の CloudFront 経由のみ許可するため、この段階ではブロックしたままにします。
+        </p>
+
+        <pre><code>aws s3 mb s3://your-domain.com --region ap-northeast-1</code></pre>
+
+        <h2>2. 静的ウェブサイトホスティングを有効化</h2>
+
+        <p>
+          バケットのプロパティから「静的ウェブサイトホスティング」を有効にし、
+          インデックスドキュメントに <code>index.html</code>、エラードキュメントに <code>404.html</code> を指定します。
+        </p>
+
+        <h2>3. CloudFront ディストリビューションの作成</h2>
+
+        <p>
+          CloudFront コンソールから新しいディストリビューションを作成し、
+          オリジンドメインに先ほど作成した S3 バケットを指定します。
+          OAC（Origin Access Control）を使うことで、S3 バケットへの直接アクセスを防ぎ、
+          CloudFront 経由のみでコンテンツを配信できます。
+        </p>
+
+        <blockquote>
+          <p>OAC は旧来の OAI（Origin Access Identity）の後継で、よりセキュアな設定が可能です。</p>
+        </blockquote>
+
+        <h2>4. カスタムドメインと SSL 証明書の設定</h2>
+
+        <p>
+          Route 53 でドメインを管理している場合、ACM（AWS Certificate Manager）で SSL 証明書を発行し、
+          CloudFront の「代替ドメイン名 (CNAME)」に追加するだけで HTTPS 対応が完了します。
+        </p>
+
+        <ul>
+          <li>ACM でリクエスト → DNS 検証</li>
+          <li>CloudFront のディストリビューション設定に証明書を紐付け</li>
+          <li>Route 53 で A レコード（エイリアス）を CloudFront に向ける</li>
+        </ul>
+
+        <h2>5. デプロイの自動化</h2>
+
+        <p>
+          ファイルを更新するたびに手動でアップロードするのは非効率です。
+          GitHub Actions などの CI/CD ツールを使って、<code>main</code> ブランチへのプッシュで自動デプロイする仕組みを作りましょう。
+        </p>
+
+        <pre><code>aws s3 sync ./dist s3://your-domain.com --delete
+aws cloudfront create-invalidation \
+  --distribution-id XXXXXXXXX \
+  --paths "/*"</code></pre>
+
+        <p>以上でサイトが公開されます。設定が完了したら CloudFront の URL でアクセスして動作確認してみてください。</p>
+
+      </article>
+
+      <!-- 記事フッター -->
+      <footer class="article-footer">
+        <div class="article-tags">
+          <span class="article-tag">AWS</span>
+          <span class="article-tag">S3</span>
+          <span class="article-tag">CloudFront</span>
+          <span class="article-tag">静的サイト</span>
+        </div>
+
+        <nav class="article-nav" aria-label="前後の記事">
+          <a href="#" class="article-nav-link prev">
+            <span>← 前の記事</span>
+            前の記事タイトルがここに入ります
+          </a>
+          <a href="sample-post-2.html" class="article-nav-link next">
+            <span>次の記事 →</span>
+            CSS カスタムプロパティで作るテーマ切り替え
+          </a>
+        </nav>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ayumi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
