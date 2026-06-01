@@ -40,6 +40,38 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   });
 })();
 
+/* ===== Works carousel arrows ===== */
+(function () {
+  document.querySelectorAll('.works-carousel-wrap').forEach(function (wrap) {
+    const track = wrap.querySelector('.works-carousel');
+    const prev = wrap.querySelector('.carousel-btn.prev');
+    const next = wrap.querySelector('.carousel-btn.next');
+    if (!track || !prev || !next) return;
+
+    function scrollAmount() {
+      const card = track.querySelector('.work-card');
+      const gap = parseInt(getComputedStyle(track).gap) || 24;
+      return card ? card.offsetWidth + gap : 320;
+    }
+
+    function update() {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      prev.disabled = track.scrollLeft <= 0;
+      next.disabled = track.scrollLeft >= max;
+    }
+
+    prev.addEventListener('click', function () {
+      track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+    next.addEventListener('click', function () {
+      track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+    track.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    update();
+  });
+})();
+
 /* ===== Fade-up on scroll ===== */
 (function () {
   const els = document.querySelectorAll('.fade-up');
