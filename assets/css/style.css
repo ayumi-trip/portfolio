@@ -10,12 +10,12 @@
   --color-surface: #ffffff;
   --color-text: #2c2c2c;
   --color-text-muted: #6b6b6b;
-  --color-accent: #4a7c59;
-  --color-accent-hover: #3d6648;
-  --color-accent-light: #e8f0eb;
-  --color-border: #e4e0d8;
-  --color-tag-bg: #eef4ef;
-  --color-tag-text: #3d6648;
+  --color-accent: #3a6e8f;
+  --color-accent-hover: #2d5a78;
+  --color-accent-light: #e3eef5;
+  --color-border: #dde3e8;
+  --color-tag-bg: #e8f2f8;
+  --color-tag-text: #2d5a78;
 
   --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
   --font-serif: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
@@ -150,8 +150,8 @@ section {
 }
 
 .hero-avatar {
-  width: 110px;
-  height: 110px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -177,9 +177,9 @@ section {
 
 .hero-tagline {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.8;
-  max-width: 480px;
+  max-width: 560px;
   margin-bottom: var(--space-md);
 }
 
@@ -263,7 +263,7 @@ section {
 
 /* ===== Skills ===== */
 #skills {
-  background: #f5f3ef;
+  background: #f0f4f8;
 }
 
 .skills-grid {

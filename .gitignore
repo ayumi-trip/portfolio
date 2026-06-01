@@ -1,5 +1,6 @@
 desktop.ini
 .DS_Store
 Thumbs.db
-css/
-js/
+/css/
+/js/
+node_modules/
