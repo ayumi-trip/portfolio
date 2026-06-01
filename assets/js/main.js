@@ -20,6 +20,26 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   });
 });
 
+/* ===== Works tabs ===== */
+(function () {
+  const tabs = document.querySelectorAll('.works-tab');
+  const panels = document.querySelectorAll('.works-panel');
+  if (!tabs.length) return;
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const target = tab.dataset.tab;
+      tabs.forEach(function (t) {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.toggle('is-active', p.dataset.panel === target);
+      });
+    });
+  });
+})();
+
 /* ===== Fade-up on scroll ===== */
 (function () {
   const els = document.querySelectorAll('.fade-up');

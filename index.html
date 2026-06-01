@@ -18,10 +18,16 @@
       <a href="index.html" class="site-logo">Ayumi</a>
       <nav aria-label="メインナビゲーション">
         <ul class="site-nav">
-          <li><a href="index.html" class="active">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#works">Works</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="https://note.com/ayumi495452">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="nav-x-item">
+            <a href="https://x.com/ayumi495452" class="nav-x-link" aria-label="X (Twitter)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -43,8 +49,8 @@
             <p class="hero-eyebrow">Hello, I'm</p>
             <h1 class="hero-name">Ayumi</h1>
             <p class="hero-tagline">
-              コンテンツマーケター・ライター<br />
-              体験とデータの両面から、読者の行動につながる情報を発信しています。
+              旅行・ホテル業界に強いコンテンツマーケター／ライター<br />
+              記事制作からSEO・CRM施策まで、体験とデータの両面から「成果につながる発信」を支援します。
             </p>
             <div class="hero-links">
               <a href="#works" class="btn btn-primary">実績を見る</a>
@@ -64,22 +70,101 @@
         <div class="fade-up">
           <p>はじめまして、Ayumiです。<br />旅行・ホテル・IT分野を中心に、記事制作やコンテンツ企画に取り組んでいます。<br />実際の体験やデータをもとに、読者の次の行動につながる情報をわかりやすく届けることを大切にしています。</p>
           <p>本業ではデジタルマーケティングやWebサービスの企画・運用を担当。SEOやデータ分析の知見を活かしながら、読者と企業をつなぐコンテンツづくりに携わっています。</p>
+          <a href="https://news.yahoo.co.jp/users/expert/ayumicp" class="yahoo-expert-link" target="_blank" rel="noopener noreferrer">
+            📰 Yahoo!ニュース エキスパートとして執筆中 →
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills">
+    <!-- Works -->
+    <section id="works" class="works-bg">
       <div class="container">
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">スキルセット</h2>
+        <span class="section-label">Works</span>
+        <h2 class="section-title">制作実績</h2>
         <hr class="section-rule" />
-        <div class="skills-grid">
 
-          <div class="skill-card fade-up">
-            <div class="skill-card-icon">✍️</div>
-            <h3>コンテンツ制作</h3>
-            <ul class="skill-list" aria-label="コンテンツ制作スキル">
+        <div class="works-tabs" role="tablist">
+          <button class="works-tab is-active" role="tab" aria-selected="true" data-tab="articles">執筆実績（記事）</button>
+          <button class="works-tab" role="tab" aria-selected="false" data-tab="others">その他の実績</button>
+        </div>
+
+        <div class="works-panel is-active" data-panel="articles">
+          <div class="works-grid">
+
+            <article class="work-card fade-up">
+              <img src="assets/images/image-1773308009114.jpeg" alt="沖縄・ムーンビーチのプールサイド" class="work-card-thumbnail" />
+              <div class="work-card-body">
+                <h3 class="work-card-title">"海と暮らす"という贅沢。沖縄・ムーンビーチの魅力</h3>
+                <p class="work-card-desc">実際に滞在した体験をもとに、ホテルの魅力をリアルな視点で執筆。Yahoo!ニュース エキスパートに掲載。</p>
+                <div class="work-card-links">
+                  <a href="https://news.yahoo.co.jp/expert/articles/ea6bf84ca7d2e9a16827b31dfb92f8680979f117" target="_blank" rel="noopener noreferrer">記事を読む →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card fade-up">
+              <img src="assets/images/image-1773260030050.jpeg" alt="宮古島・伊良部大橋" class="work-card-thumbnail" />
+              <div class="work-card-body">
+                <h3 class="work-card-title">宮古島と石垣島、どちらがおすすめ？</h3>
+                <p class="work-card-desc">旅のスタイル別に選び方を解説した比較記事。Yahoo!ニュース エキスパートに掲載。</p>
+                <ul class="work-card-results">
+                  <li>📈 PV 5万超え</li>
+                </ul>
+                <div class="work-card-links">
+                  <a href="https://news.yahoo.co.jp/expert/articles/6ace814a4aa98501173a8f8a47f53f087d5e7462" target="_blank" rel="noopener noreferrer">記事を読む →</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="works-panel" data-panel="others">
+          <div class="works-grid">
+
+            <article class="work-card fade-up">
+              <div class="work-card-thumbnail" style="background:#e8f0eb;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏨</div>
+              <div class="work-card-body">
+                <h3 class="work-card-title">ホテル業界向けコンテンツ制作</h3>
+                <p class="work-card-desc">Google Hotel Ads、LINE活用、メールマーケティング、会員向けCRMなど、集客・顧客育成につながるコンテンツ制作・施策立案を担当。</p>
+                <ul class="work-card-results">
+                  <li>ホテルマーケティング</li>
+                  <li>CRM・会員施策</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="work-card fade-up">
+              <div class="work-card-thumbnail" style="background:#eef0f5;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">⚙️</div>
+              <div class="work-card-body">
+                <h3 class="work-card-title">業務管理システム改善</h3>
+                <p class="work-card-desc">社内の請求・発注業務を効率化するシステムの企画・運用を担当。業務フローの整理からAIを活用したシステム開発・画面設計・運用定着支援まで一貫して対応。</p>
+                <ul class="work-card-results">
+                  <li>手作業の削減</li>
+                  <li>業務効率化</li>
+                  <li>システム運用コストの削減</li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services-bg">
+      <div class="container">
+        <span class="section-label">Services</span>
+        <h2 class="section-title">対応できること</h2>
+        <hr class="section-rule" />
+
+        <div class="services-grid">
+          <div class="service-item fade-up">
+            <h3 class="service-item-title">📝 コンテンツ制作</h3>
+            <p>読者の行動につながる記事を企画・執筆します。旅行・ホテル・IT分野が得意です。</p>
+            <ul class="skill-list">
               <li class="skill-tag">SEO記事</li>
               <li class="skill-tag">旅行・ホテル記事</li>
               <li class="skill-tag">IT・マーケティング記事</li>
@@ -87,11 +172,10 @@
               <li class="skill-tag">取材・体験レポート</li>
             </ul>
           </div>
-
-          <div class="skill-card fade-up">
-            <div class="skill-card-icon">📊</div>
-            <h3>マーケティング</h3>
-            <ul class="skill-list" aria-label="マーケティングスキル">
+          <div class="service-item fade-up">
+            <h3 class="service-item-title">📈 マーケティング支援</h3>
+            <p>集客から顧客育成まで、データにもとづいた施策の立案・運用・改善を支援します。</p>
+            <ul class="skill-list">
               <li class="skill-tag">SEO対策</li>
               <li class="skill-tag">MEO対策</li>
               <li class="skill-tag">メールマーケティング</li>
@@ -99,67 +183,27 @@
               <li class="skill-tag">データ分析</li>
             </ul>
           </div>
-
-          <div class="skill-card fade-up">
-            <div class="skill-card-icon">💻</div>
-            <h3>Web・テクノロジー</h3>
-            <ul class="skill-list" aria-label="Web・テクノロジースキル">
+          <div class="service-item fade-up">
+            <h3 class="service-item-title">⚙️ 業務効率化・AI活用</h3>
+            <p>生成AIやGASを活用し、コンテンツ制作や社内業務の効率化・自動化に取り組みます。</p>
+            <ul class="skill-list">
               <li class="skill-tag">Claude Code</li>
               <li class="skill-tag">AIアプリ開発</li>
               <li class="skill-tag">AIライティング</li>
               <li class="skill-tag">プロンプト設計</li>
-              <li class="skill-tag">業務効率化</li>
               <li class="skill-tag">GAS</li>
               <li class="skill-tag">HTML / CSS</li>
             </ul>
           </div>
-
         </div>
-      </div>
-    </section>
 
-    <!-- Works -->
-    <section id="works">
-      <div class="container">
-        <span class="section-label">Works</span>
-        <h2 class="section-title">制作実績</h2>
-        <hr class="section-rule" />
-        <div class="works-grid">
-
-          <article class="work-card fade-up">
-            <div class="work-card-thumbnail" style="background:#e8f0eb;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🛍️</div>
-            <div class="work-card-body">
-              <h3 class="work-card-title">ECサイトリニューアル</h3>
-              <p class="work-card-desc">React + Next.jsで既存サイトをフルリニューアル。Core Web Vitalsスコアを大幅改善し、CVR向上に貢献。</p>
-              <div class="work-card-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">Live →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="work-card fade-up">
-            <div class="work-card-thumbnail" style="background:#eef0f5;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">📊</div>
-            <div class="work-card-body">
-              <h3 class="work-card-title">社内分析ダッシュボード</h3>
-              <p class="work-card-desc">BIツールとAPIを連携した社内向けデータ可視化基盤。ノーコード操作でグラフを生成できる仕組みを実装。</p>
-              <div class="work-card-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="work-card fade-up">
-            <div class="work-card-thumbnail" style="background:#f5f0e8;display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🌿</div>
-            <div class="work-card-body">
-              <h3 class="work-card-title">このポートフォリオ</h3>
-              <p class="work-card-desc">Vanilla HTML/CSS/JSで構築し、AWS S3 + CloudFrontで配信。シンプルさと読みやすさを重視したデザイン。</p>
-              <div class="work-card-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
-              </div>
-            </div>
-          </article>
-
+        <div class="work-style fade-up">
+          <h3 class="work-style-title">ご依頼について</h3>
+          <ul class="work-style-list">
+            <li><strong>稼働形態</strong>：業務委託・副業案件に対応可（リモート可）</li>
+            <li><strong>ご依頼の流れ</strong>：メールでご連絡 → 内容ヒアリング → お見積り → 着手</li>
+            <li>単発記事からの継続的なコンテンツ運用まで、お気軽にご相談ください。</li>
+          </ul>
         </div>
       </div>
     </section>
