@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Travel favicon">
+  <rect width="64" height="64" rx="18" fill="#315f8c"/>
+  <circle cx="22" cy="19" r="6" fill="#f7fbff"/>
+  <path d="M22 25c-5 7-8 12-8 16 0 5 4 9 9 9h19" fill="none" stroke="#f7fbff" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 8"/>
+  <path d="M44 14c-8 0-14 6-14 14 0 10 14 24 14 24s14-14 14-24c0-8-6-14-14-14z" fill="#d9e8f6"/>
+  <circle cx="44" cy="28" r="5" fill="#315f8c"/>
+  <path d="M13 43l8-4 8 4 11-5 11 5" fill="none" stroke="#d9e8f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
