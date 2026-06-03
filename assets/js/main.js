@@ -43,7 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 /* ===== Works carousel arrows ===== */
 (function () {
   document.querySelectorAll('.works-carousel-wrap').forEach(function (wrap) {
-    const track = wrap.querySelector('.works-carousel');
+    const track = wrap.querySelector('.works-carousel, .works-carousel-mobile');
     const prev = wrap.querySelector('.carousel-btn.prev');
     const next = wrap.querySelector('.carousel-btn.next');
     if (!track || !prev || !next) return;
